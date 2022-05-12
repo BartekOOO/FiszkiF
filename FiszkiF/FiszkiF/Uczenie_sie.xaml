@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiszkiF.Uczenie_sie">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#E6F4F1">
+
+            <Grid HeightRequest="1000" >
+                <Label x:Name="wyswietlana_fiszka" VerticalTextAlignment="Center" Margin="50,10,50,10" FontSize="50" BackgroundColor="LightGray" HorizontalTextAlignment="Center" Text="">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="odwroc_fiszke"/>
+                        <SwipeGestureRecognizer Direction="Right" Swiped="przesun_w_lewo"/>
+                        <SwipeGestureRecognizer Direction="Left" Swiped="przesun_w_prawo"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <Label FontSize="35" FontAttributes="Bold" HorizontalTextAlignment="Center" Text="" x:Name="nazwa_zestawu"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Column="0" Grid.Row="0" BackgroundColor="#2296f3" FontSize="23" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="tryb_z_fiszkami" Text="Fiszki"/>
+                <Button Grid.Column="1" Grid.Row="0" BackgroundColor="#2296f3" FontSize="23" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="tryb_z_testem" Text="Test"/>
+                <Button Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#2296f3" FontSize="23" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="tryb_z_pisaniem" Text="Pisanie"/>
+                
+
+            </Grid>
+            <Label Text="Fiszki" FontAttributes="Bold" Margin="10,4,0,0" FontSize="20"/>
+            <ListView IsEnabled="False" Margin="0,4,0,0" x:Name="Lista_fiszek_zestaw">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Grid Margin="0,5,0,0" BackgroundColor="#FFF4F1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Margin="0,8,0,0"  FontAttributes="Bold"  HorizontalTextAlignment="Center" FontSize="15" Grid.Column="0"   Text="{Binding slowo_grid}"/>
+                                <Label Margin="0,8,0,0" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="15"  Grid.Column="1"  Text="{Binding tlumaczenie_grid}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

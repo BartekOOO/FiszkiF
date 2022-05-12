@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiszkiF.Lista_zestawow">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#E6F4F1">
+
+            <Label Text="Lista zestawow" FontAttributes="Bold,Italic" HorizontalTextAlignment="Center" FontSize="40"/>
+
+
+            <ListView Margin="0,15,0,0" x:Name="Lista_dodanych_zestawow" ItemSelected="nadaj">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Margin="20,12,0,0"  FontAttributes="Bold" FontSize="15" Grid.Column="0"   Text="{Binding nazwa_zestawu}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Załaduj zestaw" BackgroundColor="#2296f3" FontSize="23" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="zaladuj_zestaw"/>
+            <Button Text="Usuń zestaw" BackgroundColor="#2296f3" FontSize="23" HeightRequest="50" TextColor="White" FontAttributes="Bold" Clicked="usun_zestaw"/>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

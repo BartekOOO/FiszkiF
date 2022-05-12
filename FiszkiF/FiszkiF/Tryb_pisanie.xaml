@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiszkiF.Tryb_pisanie">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <Label x:Name="wyswietlana_fiszka" Text="wdwa" FontSize="22" Margin="10,20,0,0"/>
+
+            <Grid Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Entry x:Name="wpisana_fiszka" Grid.Column="0"/>
+                <Button Text="Sprawdz" Clicked="sprawdz" Grid.Column="1" />
+
+            </Grid>
+            <Label x:Name="poprawna_fiszka" TextColor="Red" IsVisible="false" Text="wdwa" FontSize="22" Margin="10,20,0,0"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

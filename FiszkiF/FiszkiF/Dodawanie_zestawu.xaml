@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiszkiF.Dodawanie_zestawu">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#E6F4F1">
+
+            <Entry Margin="0,24,0,0" HorizontalTextAlignment="Center" x:Name="Nazwa_zestawu" Placeholder="Podaj nazwę zestawu" FontSize="25"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Button BackgroundColor="#2296f3" Clicked="Dodaj_nowa_fiszke" Text="Dodaj" FontSize="23" HeightRequest="50" Grid.Column="0" Grid.Row="0" TextColor="White" FontAttributes="Bold"/>
+                <Button BackgroundColor="#2296f3" Clicked="Zatwierdz_caly_zestaw" Text="Zatwierdź" FontSize="23" HeightRequest="50" Grid.Column="1" Grid.Row="0" TextColor="White" FontAttributes="Bold"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Entry Placeholder="Słowo" x:Name="slowo_entry" Grid.Column="0"/>
+                <Entry Placeholder="Tłumaczenie" x:Name="tlumaczenie_entry" Grid.Column="1"/>
+            </Grid>
+
+            <ListView x:Name="Lista_dodanych_fiszek" ItemTapped="Modyfikuj_dodana_fiszke">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Margin="0,12,0,0"  FontAttributes="Bold"  HorizontalTextAlignment="Center" FontSize="15" Grid.Column="0"   Text="{Binding slowo_grid}"/>
+                                <Label Margin="0,12,0,0" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="15"  Grid.Column="1"  Text="{Binding tlumaczenie_grid}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+      
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

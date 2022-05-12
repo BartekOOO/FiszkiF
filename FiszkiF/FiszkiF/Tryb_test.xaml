@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiszkiF.Tryb_test">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label x:Name="wyswietlana_fiszka" Text="wdwa" FontSize="22" Margin="10,90,0,0"/>
+
+            <Button Margin="0,70,0,0" Clicked="odpowiedza" Text="Odpowiedz A" x:Name="odpa"/>
+
+            <Button Text="Odpowiedz B" Clicked="odpowiedzb" x:Name="odpb"/>
+
+            <Button Text="Odpowiedz C" Clicked="odpowiedzc" x:Name="odpc"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

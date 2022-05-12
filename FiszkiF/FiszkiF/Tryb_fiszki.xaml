@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiszkiF.Tryb_fiszki">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#E6F4F1">
+
+            <Slider ThumbColor="Purple" MaximumTrackColor="Purple" MinimumTrackColor="Purple" IsEnabled="False" Margin="0,10,0,0" x:Name="sliderek"/>
+
+            <Label x:Name="wyswietlana_fiszka" Margin="20,20,20,20" VerticalTextAlignment="Center" FontSize="35" HorizontalTextAlignment="Center" HeightRequest="500" Text="wda" BackgroundColor="LightGray">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="odwroc_fiszke"/>
+                    <SwipeGestureRecognizer Direction="Right" Swiped="przesun_w_lewo"/>
+                    <SwipeGestureRecognizer Direction="Left" Swiped="przesun_w_prawo"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
